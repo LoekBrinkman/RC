@@ -12,12 +12,10 @@ rm(list=ls())
 
 ### step 1: load the data 
 #set the directory where to data is located
-setwd("~/Dropbox/Utrecht/Onderwijs/2018-2019/BA theses - blok 3-4")
-#setwd("~/ci script")
+setwd("~/ci script")
 
 #load data
-dat <- read_xlsx('data_exp_6826-v4_task-vrho.xlsx')
-#dat <- read_xlsx('data_exp_7614-v16_task-zaz4.xlsx')
+dat <- read_xlsx('data_exp_7614-v16_task-zaz4.xlsx')
 
 dat <- dat %>% select(`Participant Public ID`, Response, display) %>% #select the Response column
   filter(!is.na(Response) & Response != "null") %>% #remove rows that don't code for stimuli 

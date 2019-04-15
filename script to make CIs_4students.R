@@ -15,14 +15,14 @@ rm(list=ls())
 setwd("~/ci script")
 
 #load data
-dat <- read_xlsx('data_exp_7614-v16_task-zaz4.xlsx')
+dat <- read_csv2('data_exp_7614-v16_task-zaz4.csv')
 
 dat <- dat %>% select(`Participant Public ID`, Response, display) %>% #select the Response column
   filter(!is.na(Response) & Response != "null") %>% #remove rows that don't code for stimuli 
   filter(display == "Choose") %>% 
   mutate(Response_binary = ifelse(Response == 'Foto 1', 1, -1)) #recode responses: ori = 1, inv = -1
 
-#loop over participants $ compute CIs
+#loop over participants & compute CIs
 for (i in unique(dat$`Participant Public ID`)){ #loop over participants
   filename <- i 
   if (!file.exists(str_c(getwd(), '/cis/ci_', filename, '.png'))) { #check whether the CI already exists for this participant, if so, skip this participant.

@@ -1,18 +1,15 @@
 #script to make CIs for selfimage, selfimage_mirror, (self)image_photo
 #Loek Brinkman 2019
 
-# Instructions: make sure that the three datafiles are in the folder specified below (line 20)
+# Instructions: make sure that the three datafiles are in the folder specified below (line 23)
 # Make sure that the file 'rcic_seed_1_time_Feb_20_2019_13_42.Rdata' is also in this folder
 # Select all the code an press 'Run'
 
 
-
 # install & load relevant packages
-
 if (!require("tidyverse")) install.packages("tidyverse")
 if (!require("rcicr")) install.packages("rcicr")
 if (!require("stringr")) install.packages("stringr")
-
 library(tidyverse)
 library(rcicr)
 library(stringr)
